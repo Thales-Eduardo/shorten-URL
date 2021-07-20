@@ -43,7 +43,7 @@ const ModalLink = ({ onClose, data }) => {
     } catch (err) {
       console.log(err.message);
     }
-  }, []);
+  }, [Share]);
 
   return (
     <ModalContainer>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import {
   TouchableWithoutFeedback,
   KeyboardAvoidingView,
@@ -36,7 +36,7 @@ const Home = () => {
   const [isModal, setIsModal] = useState(false);
   const [data, setData] = useState({});
 
-  async function handleShortLink() {
+  const handleShortLink = useCallback(() => {
     setLoading(true);
     try {
       const response = await api.post("/shorten", {
@@ -57,7 +57,7 @@ const Home = () => {
       setIsInput("");
       setLoading(false);
     }
-  }
+  }, [setLoading, setData, setIsModal, saveLink, setIsInput, Keyboard]);
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
