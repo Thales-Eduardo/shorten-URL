@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Platform } from "react-native";
+import { theme } from "../../global/theme";
 
 export const ContainerLogo = styled.View`
   align-items: center;
@@ -21,12 +22,12 @@ export const ContainerContent = styled.View`
 export const Title = styled.Text`
   font-size: 28px;
   font-weight: bold;
-  color: #fff;
+  color: ${theme.colors.primary};
 `;
 
 export const Sutitle = styled.Text`
   font-size: 18px;
-  color: #fff;
+  color: ${theme.colors.primary};
   padding-bottom: 10%;
 `;
 
@@ -49,7 +50,7 @@ export const BoxIcon = styled.View`
   height: 60px;
   border-bottom-left-radius: 7px;
   border-top-left-radius: 7px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: ${theme.colors.transparent};
 `;
 
 export const Input = styled.TextInput`
@@ -60,9 +61,9 @@ export const Input = styled.TextInput`
   height: 60px;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: ${theme.colors.transparent};
   font-size: 17px;
-  color: #fff;
+  color: ${theme.colors.primary};
 `;
 
 export const ButtonLink = styled.TouchableOpacity`
@@ -73,11 +74,11 @@ export const ButtonLink = styled.TouchableOpacity`
   margin: 0 15px;
   width: 91.3%;
   border-radius: 7px;
-  background-color: #fff;
+  background-color: ${theme.colors.primary};
   margin-bottom: 30px;
 `;
 
 export const ButtonLinkText = styled.Text`
   font-size: 18px;
-  color: #000;
+  color: ${theme.colors.primary};
 `;

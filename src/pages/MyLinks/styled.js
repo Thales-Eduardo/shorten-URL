@@ -1,9 +1,10 @@
 import styled from "styled-components/native";
 import { Platform } from "react-native";
+import { theme } from "../../global/theme";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #132742;
+  background-color: ${theme.colors.background};
 `;
 
 export const Title = styled.Text`
@@ -11,7 +12,7 @@ export const Title = styled.Text`
   margin-left: 20px;
   font-size: 33px;
   font-weight: bold;
-  color: #fff;
+  color: ${theme.colors.primary};
 `;
 
 export const ListLinks = styled.FlatList``;
@@ -20,7 +21,7 @@ export const Aviso = styled.Text`
   margin: 10px 0px;
   margin-left: 20px;
   font-size: 13px;
-  color: #fff;
+  color: ${theme.colors.primary};
 `;
 
 export const ContainerEmpty = styled.View`
@@ -31,5 +32,5 @@ export const ContainerEmpty = styled.View`
 
 export const WarningText = styled.Text`
   font-size: 20px;
-  color: #fff;
+  color: ${theme.colors.primary};
 `;

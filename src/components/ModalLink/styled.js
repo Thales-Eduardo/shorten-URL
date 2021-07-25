@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { theme } from "../../global/theme";
 
 export const ModalContainer = styled.View`
   flex: 1;
@@ -6,7 +7,7 @@ export const ModalContainer = styled.View`
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #fff;
+  background-color: ${theme.colors.primary};
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 0 15px;
@@ -27,18 +28,18 @@ export const LinkArea = styled.View`
 export const Title = styled.Text`
   font-size: 36px;
   font-weight: bold;
-  color: #1ccbae;
+  color: ${theme.colors.secondary};
 `;
 export const LongUrl = styled.Text`
   font-size: 17px;
-  color: #a7a7a7;
+  color: ${theme.colors.primary10};
   margin-bottom: 30px;
 `;
 
 export const ShortLinkArea = styled.TouchableOpacity`
   height: 55px;
   width: 100%;
-  background-color: #172742;
+  background-color: ${theme.colors.background};
   border-radius: 7px;
   flex-direction: row;
   justify-content: space-between;
@@ -48,6 +49,6 @@ export const ShortLinkArea = styled.TouchableOpacity`
 
 export const ShortLinkUrlText = styled.Text`
   width: 90%;
-  color: #fff;
+  color: ${theme.colors.primary};
   font-size: 17px;
 `;
