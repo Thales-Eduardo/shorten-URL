@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import {
   TouchableOpacity,
   View,
@@ -20,12 +20,12 @@ import {
 } from "./styled";
 
 const ModalLink = ({ onClose, data }) => {
-  const CopyLink = useCallback(() => {
+  const CopyLink = () => {
     clipboard.setString(data.link);
     alert("Link copiado com sucesso!");
-  }, [clipboard]);
+  };
 
-  const handleShare = useCallback(async () => {
+  const handleShare = async () => {
     try {
       const result = await Share.share({
         message: `Link: ${data.link}`,
@@ -43,7 +43,7 @@ const ModalLink = ({ onClose, data }) => {
     } catch (err) {
       console.log(err.message);
     }
-  }, [Share]);
+  };
 
   return (
     <ModalContainer>
