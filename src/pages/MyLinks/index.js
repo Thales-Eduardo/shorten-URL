@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Modal, ActivityIndicator } from "react-native";
-import { useIsFocused } from "@react-navigation/native";
+import React, { useState, useEffect } from 'react';
+import { Modal, ActivityIndicator } from 'react-native';
+import { useIsFocused } from '@react-navigation/native';
 
-import Menu from "../../components/Menu";
-import ModalLink from "../../components/ModalLink";
-import ListItem from "../../components/ListItem";
-import StatusBarPage from "../../components/StatusBarPage";
+import Menu from '../../components/Menu';
+import ModalLink from '../../components/ModalLink';
+import ListItem from '../../components/ListItem';
+import StatusBarPage from '../../components/StatusBarPage';
 
-import { getLinksSave, deleteLink } from "../../utils/storage";
+import { useStorage } from '../../hooks/Storage';
 
 import {
   Container,
@@ -16,7 +16,7 @@ import {
   Aviso,
   ContainerEmpty,
   WarningText,
-} from "./styled";
+} from './styled';
 
 const MyLinks = () => {
   const isFocused = useIsFocused();
@@ -25,9 +25,11 @@ const MyLinks = () => {
   const [isModal, setIsModal] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const { getLinksSave, deleteLink } = useStorage();
+
   useEffect(() => {
     async function getLinks() {
-      const result = await getLinksSave("links");
+      const result = await getLinksSave('links');
       setLinks(result);
       setLoading(false);
     }
@@ -86,6 +88,3 @@ const MyLinks = () => {
 };
 
 export default MyLinks;
-
-//renderItem={({ item }) => <ListItem data={item} />}
-//está resebendo todas as propiedadedes salvar no state data

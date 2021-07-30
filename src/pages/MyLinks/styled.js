@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
-import { Platform } from "react-native";
-import { theme } from "../../global/theme";
+import styled from 'styled-components/native';
+import { Platform } from 'react-native';
+import { theme } from '../../global/theme';
 
 export const Container = styled.View`
   flex: 1;
@@ -8,7 +8,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  margin-top: ${Platform.OS === "ios" ? 35 + "%" : 20 + "%"};
+  margin-top: ${Platform.OS === 'ios' ? 35 + '%' : 20 + '%'};
   margin-left: 20px;
   font-size: 33px;
   font-weight: bold;

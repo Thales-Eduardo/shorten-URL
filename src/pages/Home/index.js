@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   TouchableWithoutFeedback,
   KeyboardAvoidingView,
@@ -6,16 +6,16 @@ import {
   Keyboard,
   Modal,
   ActivityIndicator,
-} from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { Feather } from "@expo/vector-icons";
+} from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Feather } from '@expo/vector-icons';
 
-import StatusBarPage from "../../components/StatusBarPage";
-import Menu from "../../components/Menu";
-import ModalLink from "../../components/ModalLink";
+import StatusBarPage from '../../components/StatusBarPage';
+import Menu from '../../components/Menu';
+import ModalLink from '../../components/ModalLink';
 
-import api from "../../services/api";
-import { saveLink } from "../../utils/storage";
+import api from '../../services/api';
+import { useStorage } from '../../hooks/Storage';
 
 import {
   ContainerLogo,
@@ -28,33 +28,34 @@ import {
   Input,
   ButtonLink,
   ButtonLinkText,
-} from "./styled";
+} from './styled';
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
-  const [isInput, setIsInput] = useState("");
+  const [isInput, setIsInput] = useState('');
   const [isModal, setIsModal] = useState(false);
   const [data, setData] = useState({});
 
-  const handleShortLink = () => {
+  const { saveLink } = useStorage();
+
+  const handleShortLink = async () => {
     setLoading(true);
     try {
-      const response = await api.post("/shorten", {
+      const response = await api.post('/shorten', {
         long_url: isInput,
       });
       setData(response.data);
       setIsModal(true);
 
-      saveLink("links", response.data);
+      await saveLink('links', response.data);
 
       Keyboard.dismiss();
       setLoading(false);
-      setIsInput("");
+      setIsInput('');
     } catch (err) {
-      console.log(err.message);
-      alert("shiih deu ruim!");
+      alert('deu ruim!');
       Keyboard.dismiss();
-      setIsInput("");
+      setIsInput('');
       setLoading(false);
     }
   };
@@ -62,19 +63,19 @@ const Home = () => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <LinearGradient
-        colors={["#1ddbb9", "#132742"]}
-        style={{ flex: 1, justifyContent: "center" }}
+        colors={['#1ddbb9', '#132742']}
+        style={{ flex: 1, justifyContent: 'center' }}
       >
         <StatusBarPage backgroundColor="#1ddbb9" barStyle="light-content" />
         <Menu />
 
         <KeyboardAvoidingView
-          behavior={Platform.OS === "android" ? "padding" : "position"}
+          behavior={Platform.OS === 'android' ? 'padding' : 'position'}
           enabled
         >
           <ContainerLogo>
             <Logo
-              source={require("../../assets/logo.png")}
+              source={require('../../assets/logo.png')}
               resizeMode="contain"
             />
           </ContainerLogo>

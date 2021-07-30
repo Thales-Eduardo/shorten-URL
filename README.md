@@ -4,4 +4,6 @@ Fiz esse projeto no evento do sujeito programador consumindo a api do bitlink, e
 
 https://www.youtube.com/channel/UCLc5Bq2yfs-S3Zse3ZFRMEQ
 
+Nesse projeto as únicas adições que fiz foi tema global e o uso de Context Api.
+
 ![home](./docs/home.png)

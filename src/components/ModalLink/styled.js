@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import { theme } from "../../global/theme";
+import styled from 'styled-components/native';
+import { theme } from '../../global/theme';
 
 export const ModalContainer = styled.View`
   flex: 1;

@@ -1,8 +1,8 @@
-import React from "react";
-import { Feather } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import React from 'react';
+import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-import { Button } from "./styled";
+import { Button } from './styled';
 
 const Menu = () => {
   const navigation = useNavigation();

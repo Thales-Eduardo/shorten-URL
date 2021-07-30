@@ -1,11 +1,11 @@
-import styled from "styled-components/native";
-import { Platform } from "react-native";
-import { theme } from "../../global/theme";
+import styled from 'styled-components/native';
+import { Platform } from 'react-native';
+import { theme } from '../../global/theme';
 
 export const ContainerLogo = styled.View`
   align-items: center;
   justify-content: center;
-  margin-top: ${Platform.OS === "ios" ? 35 + "px" : 10 + "px"};
+  margin-top: ${Platform.OS === 'ios' ? 35 + 'px' : 10 + 'px'};
 `;
 
 export const Logo = styled.Image`
@@ -16,7 +16,7 @@ export const Logo = styled.Image`
 export const ContainerContent = styled.View`
   align-items: center;
   justify-content: center;
-  margin-top: ${Platform.OS === "ios" ? 25 + "%" : 15 + "%"};
+  margin-top: ${Platform.OS === 'ios' ? 25 + '%' : 15 + '%'};
 `;
 
 export const Title = styled.Text`
@@ -80,5 +80,5 @@ export const ButtonLink = styled.TouchableOpacity`
 
 export const ButtonLinkText = styled.Text`
   font-size: 18px;
-  color: ${theme.colors.primary};
+  color: ${theme.colors.primary20};
 `;

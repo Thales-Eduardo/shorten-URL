@@ -1,9 +1,9 @@
-import React from "react";
-import { View } from "react-native";
-import { Feather } from "@expo/vector-icons";
-import Swipeable from "react-native-gesture-handler/Swipeable";
+import React from 'react';
+import { View } from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 
-import { ContainerButton, Title, ActionContainer } from "./styled";
+import { ContainerButton, Title, ActionContainer } from './styled';
 
 const ListItem = ({ data, selectedItem, deleteItem }) => {
   function RightActions() {

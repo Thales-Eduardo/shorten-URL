@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import {
   TouchableOpacity,
   View,
   TouchableWithoutFeedback,
   Share,
-} from "react-native";
-import { Feather } from "@expo/vector-icons";
-import clipboard from "expo-clipboard";
+} from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import clipboard from 'expo-clipboard';
 
 import {
   ModalContainer,
@@ -17,12 +17,12 @@ import {
   LongUrl,
   ShortLinkArea,
   ShortLinkUrlText,
-} from "./styled";
+} from './styled';
 
 const ModalLink = ({ onClose, data }) => {
   const CopyLink = () => {
     clipboard.setString(data.link);
-    alert("Link copiado com sucesso!");
+    alert('Link copiado com sucesso!');
   };
 
   const handleShare = async () => {
@@ -33,12 +33,12 @@ const ModalLink = ({ onClose, data }) => {
 
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
-          console.log("activityType");
+          console.log('activityType');
         } else {
-          console.log("Compartilhou");
+          console.log('Compartilhou');
         }
       } else if (result.action === Share.dismissedAction) {
-        console.log("modal fechado");
+        console.log('modal fechado');
       }
     } catch (err) {
       console.log(err.message);
